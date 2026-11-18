@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mriganka Saikia – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f5; --surface:#ffffff; --ink:#15213d; --muted:#53607a; --line:#cfd6e2; --accent:#2b4fe0; --accent-ink:#ffffff; --mark:#f5c451;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0f1730; --surface:#18233f; --ink:#e8ecf6; --muted:#9aa7c4; --line:#2c3a5e; --accent:#8fa7ff; --accent-ink:#0f1730; --mark:#f5c451;}
+}
+:root[data-theme="dark"]{--bg:#0f1730; --surface:#18233f; --ink:#e8ecf6; --muted:#9aa7c4; --line:#2c3a5e; --accent:#8fa7ff; --accent-ink:#0f1730; --mark:#f5c451;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Instrument Sans",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;font-weight:600}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline;text-underline-offset:4px}
+h1,h2,h3{font-family:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;line-height:1.05;margin:0}
+.hero{padding:5rem 0 4.5rem}
+h1{font-weight:800;font-size:clamp(3.2rem,11vw,8rem);letter-spacing:-.035em}
+h1 span{display:block;background:linear-gradient(transparent 62%,var(--mark) 62% 92%,transparent 92%);width:fit-content;color:var(--ink)}
+.lede{max-width:34rem;margin:2rem 0 2rem;font-size:1.25rem;color:var(--muted)}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:.6rem;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none}
+.btn:hover{filter:brightness(1.1)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:.5rem}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font-size:2.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:2rem}
+.work a.row{display:grid;grid-template-columns:6.5rem 1fr 1.4fr;gap:1.5rem;padding:1.6rem 0;border-bottom:1px solid var(--line);text-decoration:none}
+.work a.row:first-of-type{border-top:1px solid var(--line)}
+.work a.row:hover h3{color:var(--accent)}
+.work .yr{color:var(--muted);font-variant-numeric:tabular-nums}
+h3{font-size:1.5rem;font-weight:800;transition:color .15s}
+.work p{margin:.3rem 0 0;color:var(--muted)}
+.tags{color:var(--muted);font-size:.95rem}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem}
+.about p{margin:0 0 1rem;max-width:38rem}
+.skills{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem;align-content:flex-start}
+.skills li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.3rem .9rem;font-size:.95rem}
+.contact p{font-size:1.25rem;max-width:32rem;color:var(--muted);margin:0 0 1.5rem}
+.contact .mail{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(1.6rem,5vw,3rem);word-break:break-word}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+.stack-intro{max-width:40rem;color:var(--muted);font-size:1.15rem;margin:-1rem 0 2rem}
+.stack{list-style:none;margin:0;padding:0;border-left:3px solid var(--accent)}
+.stack li{display:grid;grid-template-columns:9rem 1fr;gap:.5rem 2rem;padding:1.3rem 0 1.3rem 1.6rem;position:relative;border-bottom:1px dashed var(--line)}
+.stack li::before{content:"";position:absolute;left:-.5rem;top:1.75rem;width:.8rem;height:.8rem;border-radius:50%;background:var(--mark);border:2px solid var(--accent)}
+.stack h3{font-size:1.3rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 .6rem}
+.chips span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.2rem .8rem;font-size:.92rem;font-weight:600}
+.stack p{margin:0;color:var(--muted);max-width:36rem}
+@media (max-width:720px){.stack li{grid-template-columns:1fr}}
+@media (max-width:720px){
+  .work a.row{grid-template-columns:1fr;gap:.4rem}
+  .about{grid-template-columns:1fr;gap:1.5rem}
+  .btn.alt{margin:.6rem 0 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <strong>Mriganka Saikia</strong>
+    <ul><li><a href="#work">Work</a></li><li><a href="#stack">Stack</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Mriganka Saikia<span>builds for the web.</span></h1>
+    <p class="lede">I’m a full stack developer with a minor in data analytics. I build web applications and work with data to make them useful.</p>
+    <a class="btn" href="#work">See my work</a><a class="btn alt" href="#contact">Get in touch</a>
+  </header>
+
+  <section id="work" class="work">
+    <h2>Selected work</h2>
+    <a class="row" href="https://github.com/mriganka-saikia/IBM_Internship"><span class="yr">Intern</span><div><h3>IBM Internship</h3><div class="tags">HTML · 40-day program</div></div><p>Everything I built during a 40-day internship with IBM, collected in one repository.</p></a>
+    <a class="row" href="https://github.com/abhijitnath02/Railpulse-SIS-Hackathon-2026"><span class="yr">Hackathon</span><div><h3>RailPulse</h3><div class="tags">React · FastAPI · XGBoost · SHAP · scikit-learn</div></div><p>Predicts how late an Indian Railways train will be at its next stations, with a confidence range and a plain explanation of why.</p></a>
+    <a class="row" href="https://github.com/mriganka-saikia"><span class="yr">Hackathon</span><div><h3>TimeBank</h3><div class="tags">React · Tailwind CSS · Express · PostgreSQL · Supabase</div></div><p>Lets verified campus students teach and learn skills by trading time credits instead of money, with bookings, reviews and trust ratings.</p></a>
+    <a class="row" href="https://github.com/mriganka-saikia"><span class="yr">Full stack</span><div><h3>Skill Exchange</h3><div class="tags">React · Chakra UI · Express · MongoDB · Socket.IO · Razorpay · Gemini</div></div><p>A marketplace where people list skills they can teach, book sessions, pay online, and chat in real time.</p></a>
+    <a class="row" href="https://github.com/mriganka-saikia"><span class="yr">Full stack</span><div><h3>SmartStock</h3><div class="tags">React · Express · MongoDB · QR codes</div></div><p>Inventory tracker for items and rooms, with QR labels, bulk import, and an audit log of every change.</p></a>
+  </section>
+
+  <section id="stack">
+    <h2>Technical summary</h2>
+    <p class="stack-intro">Every project here follows the same path: a request leaves the browser, passes through an API, lands in a database, and sometimes asks a model for its opinion. This is that path, layer by layer.</p>
+    <ol class="stack" style="list-style:none">
+      <li><h3>Interface</h3><div><div class="chips"><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Chakra UI</span></div><p>Component-based screens for live train delays, bookings, chat, and inventory.</p></div></li>
+      <li><h3>Services</h3><div><div class="chips"><span>Node.js</span><span>Express</span><span>FastAPI</span><span>Socket.IO</span><span>JWT auth</span></div><p>REST APIs with token login and role-based access, plus sockets where chat and live updates matter.</p></div></li>
+      <li><h3>Data</h3><div><div class="chips"><span>MongoDB</span><span>PostgreSQL</span><span>SQL</span><span>Redis</span><span>Supabase</span></div><p>Documents for fast-changing records. Relational rules where bookings must never overlap and credits must never be spent twice.</p></div></li>
+      <li><h3>Intelligence</h3><div><div class="chips"><span>Python</span><span>XGBoost</span><span>SHAP</span><span>scikit-learn</span><span>Gemini</span></div><p>Delay forecasts that come with a confidence range and a reason, and AI-written descriptions for listings.</p></div></li>
+      <li><h3>Delivery</h3><div><div class="chips"><span>Docker</span><span>Docker Compose</span><span>Razorpay</span></div><p>Containerised services that start with one command, and online payments for paid sessions.</p></div></li>
+    </ol>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <div>
+        <p>I’m a full stack developer with a minor in data analytics. I enjoy building web applications end to end and using data to guide what I build.</p>
+        <p>Most of what’s here started as a hackathon or internship brief and grew into a working product.</p>
+      </div>
+      <ul class="skills" aria-label="Find me online">
+        <li><a href="https://github.com/mriganka-saikia">GitHub: mriganka-saikia</a></li><li><a href="mailto:smriganka00@gmail.com">smriganka00@gmail.com</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Have a project or a role in mind? Send me a note and I’ll get back to you.</p>
+    <a class="mail" href="mailto:smriganka00@gmail.com">smriganka00@gmail.com</a>
+  </section>
+
+  <footer>© 2026 Mriganka Saikia. <a href="https://github.com/mriganka-saikia">GitHub</a></footer>
+</div>
+</body>
+</html>
